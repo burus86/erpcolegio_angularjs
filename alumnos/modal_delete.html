@@ -1,0 +1,19 @@
+<!-- Modal Dialog -->
+<div id="modalAlumnosDelete" ng-controller="AlumnosDeleteCtrl" class="modal fade" id="confirmDelete" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title">Eliminar alumno</h3>
+      </div>
+      <div class="modal-body">
+        <p><strong>¿Estás seguro de que quieres borrar de la base de datos al alumno {{deleteAlumno.nombre + ' ' + deleteAlumno.apellidos}}?</strong> Los datos serán borrados permanentemente y no podrás recuperarlos.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirm" ng-click="delete()">Delete</button><!-- ng-click="delete(deleteAlumno.id)" -->
+        <input type="hidden" name="id" value="{{id}}">
+      </div>
+    </div>
+  </div>
+</div>

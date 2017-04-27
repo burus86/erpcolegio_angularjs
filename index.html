@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ERP para el IES San Clemente</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|Indie+Flower'>
+        <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css' />
+        <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+        <link rel='stylesheet' href='css/style.css' />
+        <!-- Ficheros JS AngularJS -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <!-- In production use:
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script> -->
+        <!-- Fichero JS de jQuery y Twitter Bootstrap -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
+        <script>
+            $( document ).ready(function() {
+                $('[data-toggle="tooltip"]').tooltip(); // FIXME: No se cargan los tooltip al inicio
+            });
+        </script>
+    </head>
+    <body>
+        <div ng-include="'partials/nav.html'"></div>
+
+        <!-- Carga la vista correspondiente, que se controla desde el fichero JS correspondiente a cada entidad: alumnos.js, profesores.js, etc -->
+        <div ng-view></div>
+
+        <!-- Fichero JS principal: app.js -->
+        <script src="app.js"></script>
+
+        <!-- Ficheros JS para home (muestra los usuarios) -->
+        <script src="home/home.js"></script>
+        <script src="home/home.controller.js"></script>
+        <script src="home/home.list.controller.js"></script>
+        <script src="home/home.stats.controller.js"></script>
+
+        <!-- Ficheros JS para usuarios -->
+        <script src="home/usuarios.view.controller.js"></script>
+
+        <!-- Ficheros JS para alumnos -->
+        <script src="alumnos/alumnos.js"></script>
+        <script src="alumnos/controllers/alumnos.view.controller.js"></script>
+        <script src="alumnos/controllers/alumnos.notas.controller.js"></script>
+        <script src="alumnos/controllers/alumnos.controllers.js"></script><!-- TODO: Separar código por funcionalidades -->
+
+        <!-- Ficheros JS para profesores -->
+        <script src="profesores/profesores.js"></script>
+        <script src="profesores/profesores.view.controller.js"></script>
+        <script src="profesores/profesores.controllers.js"></script>
+
+        <!-- Ficheros JS para ciclosformativos -->
+        <script src="ciclosformativos/ciclosformativos.js"></script>
+        <script src="ciclosformativos/ciclosformativos.view.controller.js"></script>
+        <script src="ciclosformativos/ciclosformativos.asignaturas.controller.js"></script>
+        <script src="ciclosformativos/ciclosformativos.controllers.js"></script>
+
+        <!-- Ficheros JS para asignaturas -->
+        <script src="asignaturas/asignaturas.js"></script>
+        <script src="asignaturas/asignaturas.view.controller.js"></script>
+        <script src="asignaturas/asignaturas.controllers.js"></script>
+
+        <!-- Ficheros JS para participantes -->
+        <script src="participantes/participantes.js"></script>
+        <script src="participantes/participantes.controller.js"></script>
+
+        <!-- Otros ficheros JS -->
+        <script src="login/login.js"></script>
+        <script src="login/login.controller.js"></script>
+        <script src="login/register.controller.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<div class="container">
+	<h1>Proyecto de AngularJS</h1>
+	<h4>Alumnos matriculados en el colegio</h4>
+	<hr/>
+
+	<div ng-controller="AlumnosListCtrl">
+	  
+	  <!-- Ventana modal de añadir / editar alumno -->
+	  <div ng-include="'alumnos/modal_alumnos.html'"></div>
+	  <div ng-include="'alumnos/modal_delete.html'"></div>
+
+	  <div class="table-responsive">
+		  <table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Nombre</th>
+					<th>DNI</th>
+					<th>Email</th>
+					<th>Teléfono</th>
+					<th>Fecha Nacimiento</th>
+					<!-- <th>Dirección</th> -->
+					<th></th>
+				</tr>
+			</thead>  
+			<tbody>
+				<tr ng-repeat="item in alumnos | orderBy:'nombre' | filter:search:strict">
+					<td>{{$index+1}}</td><!-- {{item.id}} -->
+					<td>
+	                    <a class="btn btn-link" ng-href="#/alumnos/{{item.id}}" >
+							{{item.nombre + ' ' + item.apellidos}}
+	                    </a>
+					</td>
+					<td>{{item.dni}}</td>
+					<td>{{item.email}}</td>
+					<td>{{item.telefono}}</td>
+					<td>{{item.fecha_nacimiento}}</td>
+					<!-- <td>{{item.direccion}}</td> -->
+					<td>
+						<a class="btn btn-sm btn-info btn-show" ng-href="#/alumnos/{{item.id}}/notas">
+	                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+	                    </a>
+	                    <button class="btn btn-sm btn-warning btn-edit" ng-click="showEdit(item.id)" data-toggle="tooltip" data-placement="top" title="Editar alumno"><!-- ng-controller="AlumnosEditCtrl" -->
+	                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+	                    </button>
+						<button class="btn btn-sm btn-danger btn-delete" ng-click="showDelete(item.id)" data-toggle="modal" data-target="#modalAlumnosDelete" title="Borrar alumno"><!-- data-toggle="modal" data-target="#modalAlumnosDelete" --><!-- ng-controller="AlumnosDeleteCtrl"  -->
+							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+	            <tr>
+	                <td></td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.nombre" placeholder="Buscar nombre" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.dni" placeholder="Buscar DNI" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.email" placeholder="Buscar email" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.telefono" placeholder="Buscar teléfono" />
+	                </td>
+	                <td>
+	                    <!-- <input class="form-control" type="search" ng-model="search.fecha_nacimiento" placeholder="Buscar fecha de nacimiento" /> -->
+	                </td>
+	                <!-- <td>
+	                    <input class="form-control" type="search" ng-model="search.direccion" placeholder="Buscar dirección" />
+	                </td> -->
+	                <td></td>
+	            </tr>
+			</tfoot>
+		  </table>
+	  </div>
+	  <button id="btn-add" class="btn btn-primary btn-sm" ng-click="showAdd()"><!-- ng-controller="AlumnosAddCtrl"  -->
+		  Nuevo <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	  </button>
+
+	</div>
+</div>

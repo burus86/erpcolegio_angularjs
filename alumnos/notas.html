@@ -1,0 +1,38 @@
+<div class="container">
+	<h1>Proyecto de AngularJS</h1>
+	<h4>Notas correspondientes a {{detailsAlumno.nombre + ' ' + detailsAlumno.apellidos}}</h4>
+	<hr/>
+
+	<div ng-controller="AlumnosNotasCtrl">
+	  <div class="table-responsive">
+		  <table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Asignatura</th>
+					<th>Nota</th>
+					<th>Trimestre</th>
+					<th>Observaciones</th>
+				</tr>
+			</thead>  
+			<tbody>
+				<tr ng-repeat="item in notasAlumnos | orderBy:'nombre' | filter:search:strict">
+					<td>{{$index+1}}</td><!-- {{item.id}} -->
+					<td>
+	                    <a class="btn-link" ng-href="#/asignaturas/{{item.asignatura.id}}" >
+							{{item.nombre_asignatura}}
+	                    </a>
+					</td>
+                    <td class="text-center">{{item.nota}}</td>
+                    <td class="text-center">{{item.trimestre}}</td>
+                    <td>{{item.observaciones}}</td>
+				</tr>
+			</tbody>
+		  </table>
+	  </div>
+	  <!-- <button ng-controller="AsignaturasAddCtrl" id="btn-add" class="btn btn-primary btn-sm" ng-click="addForCiclo()">
+		  Nuevo <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	  </button> -->
+
+	</div>
+</div>
