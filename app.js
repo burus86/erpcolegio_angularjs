@@ -4,11 +4,11 @@
 angular.module('myApp', [
 	'ngRoute',
 	'myApp.alumnos',
-	'myApp.profesores',
+	/*'myApp.profesores',
 	'myApp.ciclosformativos',
 	'myApp.asignaturas',
 	'myApp.login',
-	'myApp.home',
+	'myApp.home',*/
 	'myApp.participantes'
 ])
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
