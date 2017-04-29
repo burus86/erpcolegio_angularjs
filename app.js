@@ -15,7 +15,7 @@ angular.module('myApp', [
 	//$locationProvider.hashPrefix('!');
 	$routeProvider.otherwise({redirectTo: '/'}); //'/login'
 }])
-.value('url', 'http://localhost/lumen/public/api/v1/') // FIXME: http://{ip_ies-sanclemente}/lumen/public/api/v1/
+.value('url', 'http://10.21.1.100/lumen/public/api/v1/') // Si el servicio web estuviese instalado en local, dejar: http://localhost/lumen/public/api/v1/
 
 /*.directive('tooltip', function() { // FIXME: Mostrar tooltips al cargar AngularJS
 	return {
