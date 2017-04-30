@@ -1,5 +1,5 @@
 <!-- Modal (Pop up when detail button clicked) -->
-<div id="modalAlumnosForm" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="modalAlumnosForm" ng-controller="AlumnosEditCtrl" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <form class="form-horizontal">
@@ -56,8 +56,6 @@
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     <button type="button" ng-click="submit()" class="btn btn-success">Submit</button>
                 </div>
-                <input type="hidden" name="new" value="{{new}}">
-                <input type="hidden" name="id" value="{{id}}">
             </form>
         </div>
     </div>

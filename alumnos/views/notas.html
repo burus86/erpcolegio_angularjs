@@ -16,7 +16,7 @@
 				</tr>
 			</thead>  
 			<tbody>
-				<tr ng-repeat="item in notasAlumnos | orderBy:'nombre' | filter:search:strict">
+				<tr ng-repeat="item in notasAlumnos | orderBy:'nombre_asignatura' | filter:search:strict">
 					<td>{{$index+1}}</td><!-- {{item.id}} -->
 					<td>
 	                    <a class="btn-link" ng-href="#/asignaturas/{{item.asignatura.id}}" >

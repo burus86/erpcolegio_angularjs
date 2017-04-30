@@ -5,9 +5,9 @@
 
 	<div ng-controller="AlumnosListCtrl">
 	  
-	  <!-- Ventana modal de añadir / editar alumno -->
-	  <div ng-include="'alumnos/modal_alumnos.html'"></div>
-	  <div ng-include="'alumnos/modal_delete.html'"></div>
+	  <!-- Carga ventanas modales de añadir, editar y eliminar alumno -->
+	  <div ng-include="'alumnos/views/modal/alumnos_edit.html'"></div>
+	  <div ng-include="'alumnos/views/modal/alumnos_delete.html'"></div>
 
 	  <div class="table-responsive">
 		  <table class="table table-striped table-hover">
@@ -40,10 +40,10 @@
 						<a class="btn btn-sm btn-info btn-show" ng-href="#/alumnos/{{item.id}}/notas">
 	                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
 	                    </a>
-	                    <button class="btn btn-sm btn-warning btn-edit" ng-click="showEdit(item.id)" data-toggle="tooltip" data-placement="top" title="Editar alumno"><!-- ng-controller="AlumnosEditCtrl" -->
+	                    <button class="btn btn-sm btn-warning btn-edit" ng-click="showEdit(item.id)" data-toggle="modal" data-target="#modalAlumnosForm" title="Editar alumno">
 	                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 	                    </button>
-						<button class="btn btn-sm btn-danger btn-delete" ng-click="showDelete(item.id)" data-toggle="modal" data-target="#modalAlumnosDelete" title="Borrar alumno"><!-- data-toggle="modal" data-target="#modalAlumnosDelete" --><!-- ng-controller="AlumnosDeleteCtrl"  -->
+						<button class="btn btn-sm btn-danger btn-delete" ng-click="showDelete(item.id)" data-toggle="modal" data-target="#modalAlumnosDelete" title="Borrar alumno">
 							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 						</button>
 					</td>
@@ -75,7 +75,7 @@
 			</tfoot>
 		  </table>
 	  </div>
-	  <button id="btn-add" class="btn btn-primary btn-sm" ng-click="showAdd()"><!-- ng-controller="AlumnosAddCtrl"  -->
+	  <button id="btn-add" class="btn btn-primary btn-sm" ng-click="showAdd()" data-toggle="modal" data-target="#modalAlumnosForm">
 		  Nuevo <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 	  </button>
 
