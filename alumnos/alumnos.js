@@ -11,4 +11,18 @@ angular.module('myApp.alumnos', ['ngRoute'])
         templateUrl: 'alumnos/views/notas.html',
         controller: 'AlumnosNotasCtrl'
     });
-}]);
+}])
+
+.run(function($rootScope, $http, url) {
+
+    $rootScope.alumnos = [];
+    
+    // Al cargarse la página, realiza automáticamente la petición GET para recuperar el listado de alumnos
+    $http.get(url + 'alumnos')
+        .then(function(response) {
+            $rootScope.alumnos = response.data;
+        }, function(response) {
+            $scope.notice = response.status + " " + response.data.error;
+        });
+
+})
