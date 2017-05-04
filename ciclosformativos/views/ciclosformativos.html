@@ -20,12 +20,14 @@
 					<th>Familia</th>
 					<th></th>
 				</tr>
-			</thead>  
+			</thead>
 			<tbody>
 				<tr ng-repeat="item in ciclosformativos | orderBy:'nombre' | filter:search:strict">
 					<td>{{$index+1}}</td>
 					<td>
+					<a class="btn btn-link" ng-href="#/ciclosformativos/{{item.id}}" >
 							{{item.nombre + ' (' + item.referencia + ')'}}
+							</a>
 					</td>
 					<td>{{item.nivel}}</td>
 					<td>{{item.duracion}}</td>
@@ -43,11 +45,30 @@
 					</td>
 				</tr>
 			</tbody>
+			<tfoot>
+			<tr><th>Nombre</th><th>Nivel</th><th>Duración</th><th>Familia Profesional</th></tr>
+			<tr ng-repeat="item in ciclosformativos">
+
+			<td>
+			{{item.nombre | filter:search:strict}}
+			</td>
+			<td>
+			{{item.nivel | filter:search:strict}}
+			</td>
+			<td>
+			{{item.duracion | orderBy:'duracion'}}
+			</td>
+
+			<td>
+			{{item.familia_profesional}}
+			</td>
+			</tr>
+			</tfoot>
 		  </table>
 	  </div>
 	  <button id="btn-add" class="btn btn-primary btn-sm" ng-click="showAdd()" data-toggle="modal" data-target="#modalCiclosFormativosForm">
 		  Nuevo <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 	  </button>
-	  
+
 	</div>
 </div>
