@@ -38,14 +38,9 @@
         <!-- Fichero JS principal: app.js -->
         <script src="app.js"></script>
 
-        <!-- Ficheros JS para home (muestra los usuarios) -->
+        <!-- Ficheros JS para home -->
         <script src="home/home.js"></script>
-        <script src="home/home.controller.js"></script>
-        <script src="home/home.list.controller.js"></script>
-        <script src="home/home.stats.controller.js"></script>
-
-        <!-- Ficheros JS para usuarios -->
-        <script src="home/usuarios.view.controller.js"></script>
+        <script src="home/controllers/home.controller.js"></script>
 
         <!-- Ficheros JS para alumnos -->
         <script src="alumnos/alumnos.js"></script>
@@ -72,17 +67,22 @@
 
         <!-- Ficheros JS para asignaturas -->
         <script src="asignaturas/asignaturas.js"></script>
-        <script src="asignaturas/asignaturas.view.controller.js"></script>
-        <script src="asignaturas/asignaturas.controllers.js"></script>
+        <script src="asignaturas/controllers/asignaturas.list.controller.js"></script>
+        <script src="asignaturas/controllers/asignaturas.view.controller.js"></script>
+        <script src="asignaturas/controllers/asignaturas.edit.controller.js"></script>
+        <script src="asignaturas/controllers/asignaturas.delete.controller.js"></script>
+        <script src="asignaturas/controllers/asignaturas.notas.controller.js"></script>
+
+        <!-- Ficheros JS para usuarios -->
+        <script src="usuarios/usuarios.js"></script>
+        <script src="usuarios/controllers/usuarios.login.controller.js"></script>
+        <script src="usuarios/controllers/usuarios.logout.controller.js"></script>
+        <script src="usuarios/controllers/usuarios.register.controller.js"></script>
+        <script src="usuarios/controllers/usuarios.view.controller.js"></script>
 
         <!-- Ficheros JS para participantes -->
         <script src="participantes/participantes.js"></script>
-        <script src="participantes/participantes.controller.js"></script>
-
-        <!-- Otros ficheros JS -->
-        <script src="login/login.js"></script>
-        <script src="login/login.controller.js"></script>
-        <script src="login/register.controller.js"></script>
+        <script src="participantes/controllers/participantes.controller.js"></script>
 
     </body>
 </html>
