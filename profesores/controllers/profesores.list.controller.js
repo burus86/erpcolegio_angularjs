@@ -39,7 +39,7 @@ angular.module('myApp.profesores')
     }
 
     $scope.showDelete = function(id) {
-        // TODO: Guardar en $scope.deleteProfesor los datos del profesor con ese id
+        $scope.deleteProfesor = $scope.getProfesor(id);
 
     };
 

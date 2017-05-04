@@ -4,8 +4,18 @@ angular.module('myApp.profesores')
 
     $scope.delete = function() {
 
-        // TODO-1: Realizar Petición DELETE a la URL /profesores/{id}
-            // TODO-2: En caso de éxito, borrar ese profesor del listado => splice(key, 1)
+        $http.get(url + 'profesores/'+$scope.deleteProfesor.id+'/delete').
+            then(function(response) {
+
+                angular.forEach($rootScope.profesores, function(item, key) {
+                    if (item.id == $scope.deleteProfesor.id)
+                        $rootScope.profesores.splice(key, 1);
+                });
+                console.log('El profesor con id = "'+$scope.deleteProfesor.id+'" y nombre = "'+$scope.deleteProfesor.nombre+' '+$scope.deleteProfesor.apellidos+'" ha sido borrado satisfactoriamente');
+
+            }, function(response) {
+                $scope.notice = response.status + " " + response.data.error;
+            });
 
         $('#modalProfesoresDelete').modal('hide');
     };
