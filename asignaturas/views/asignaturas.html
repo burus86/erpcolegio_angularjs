@@ -22,18 +22,25 @@
 					<th>Créditos</th>
 					<th></th>
 				</tr>
-			</thead>  
+			</thead>
 			<tbody>
 				<tr ng-repeat="item in asignaturas | orderBy:'codigo' | filter:search:strict">
 					<td>{{$index+1}}</td>
 					<td>
+					<a class="btn btn-link" ng-href="#/asignaturas/{{item.id}}" >
 							{{item.codigo + ': ' + item.nombre}}
+	                    </a>
 					</td>
 					<td>
+					<a class="btn btn-link" ng-href="#/profesores/{{item.id}}" >
 							{{item.nombre_profesor}}
+	                    </a>
 					</td>
 					<td>
+					<a class="btn btn-link" ng-href="#/ciclosformativos/{{item.id}}" >
 							{{item.nombre_cicloformativo}}
+	                    </a>
+
 					</td>
 					<td>{{item.curso}}</td>
 					<td>{{item.horas_semana}}</td>
@@ -51,6 +58,36 @@
 					</td>
 				</tr>
 			</tbody>
+			<tfoot>
+	            <tr>
+	                <td></td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.nombre" placeholder="Buscar asignatura" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.nombre_profesor" placeholder="Buscar profesor" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.nombre_cicloformativo" placeholder="Buscar ciclo formativo" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.curso" placeholder="Buscar curso" />
+	                </td>
+	                <td>
+	                    <!-- <input class="form-control" type="search" ng-model="search.fecha_nacimiento" placeholder="Buscar fecha de nacimiento" /> -->
+	                </td>
+	                <!-- <td>
+	                    <input class="form-control" type="search" ng-model="search.direccion" placeholder="Buscar dirección" />
+	                </td> -->
+	                	<input class="form-control" type="search" ng-model="search.codigo" placeholder="Buscar Codigo" />
+	                	<input class="form-control" type="search" ng-model="search.nombre" placeholder="Buscar Nombre" />
+
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.nombre_profesor" placeholder="Buscar Profesor" />
+	                </td>
+	                <td></td>
+	            </tr>
+			</tfoot>
 		  </table>
 	  </div>
 	  <button id="btn-add" class="btn btn-primary btn-sm" ng-click="showAdd()" data-toggle="modal" data-target="#modalAsignaturasForm">

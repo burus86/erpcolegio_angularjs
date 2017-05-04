@@ -16,12 +16,25 @@ angular.module('myApp.profesores')
 
     $scope.showAdd = function(){
         // TODO: Pasarle $scope.form y $scope.new a la ventana modal
-
+        $scope.form = {};
+        $scope.new = 1;
     };
 
     $scope.showEdit = function(id){
         var profesor = $scope.getProfesor(id);
         // TODO: Pasarle $scope.form y $scope.new a la ventana modal
+
+        $scope.form = {
+            id: profesor.id,
+            nombre: profesor.nombre,
+            apellidos: profesor.apellidos,
+            dni: profesor.dni,
+            edad: profesor.edad,
+            email: profesor.email,
+            telefono: profesor.telefono,
+            observaciones: profesor.observaciones
+        };
+        $scope.new = 0;
 
     }
 

@@ -4,7 +4,7 @@ angular.module('myApp.alumnos')
 
     $scope.delete = function() {
 
-        $http.delete(url + 'alumnos/'+$scope.deleteAlumno.id). //http.get(url + 'alumnos/'+id+'/delete').
+        $http.get(url + 'alumnos/'+$scope.deleteAlumno.id+'/delete'). //http.get(url + 'alumnos/'+id+'/delete').
             then(function(response) {
 
                 angular.forEach($rootScope.alumnos, function(item, key) {
