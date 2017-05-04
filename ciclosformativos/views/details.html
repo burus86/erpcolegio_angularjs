@@ -1,0 +1,49 @@
+<div class="container" ng-show="detailsCiclo">
+
+	<div ng-controller="CiclosFormativosViewCtrl">
+		<h3>Información del ciclo formativo {{detailsCiclo.nombre + ' (' + detailsCiclo.referencia + ')'}}</h3>
+		<form class="form-horizontal" role="form">
+
+			<div class="form-group">
+				<div class="col-sm-6 text-center">
+					<i class="fa fa-graduation-cap fa-10 text-warning" aria-hidden="true"></i>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="referencia" class="col-sm-3 control-label">Referencia: </label>
+				<div class="col-sm-9">
+					<p class="form-control-static">{{detailsCiclo.referencia}}</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="nombre" class="col-sm-3 control-label">Nombre: </label>
+				<div class="col-sm-9">
+					<p class="form-control-static">{{detailsCiclo.nombre}}</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="nivel" class="col-sm-3 control-label">Nivel: </label>
+				<div class="col-sm-9">
+					<p class="form-control-static">{{detailsCiclo.nivel}}</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="duracion" class="col-sm-3 control-label">Duración: </label>
+				<div class="col-sm-9">
+					<p class="form-control-static">{{detailsCiclo.duracion}}</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="familia_profesional" class="col-sm-3 control-label">Familia profesional: </label>
+				<div class="col-sm-9">
+					<p class="form-control-static">{{detailsCiclo.familia_profesional}}</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-6 text-center">
+					<a class="btn btn-success" ng-href="#/ciclosformativos/" >Volver al listado</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

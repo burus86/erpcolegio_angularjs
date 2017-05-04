@@ -1,0 +1,58 @@
+<div class="container" ng-show="detailsUsuario">
+
+    <div ng-controller="UsuariosViewCtrl">
+        <h3>Información del usuario {{detailsUsuario.usuario}}</h3>
+        <form class="form-horizontal" role="form">
+
+            <div class="form-group">
+                <div class="col-sm-6 text-center">
+                    <i class="fa fa-user-circle fa-10 text-warning" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuario" class="col-sm-3 control-label">Usuario: </label>
+                <div class="col-sm-9">
+                    <p class="form-control-static">{{detailsUsuario.usuario}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">Email: </label>
+                <div class="col-sm-9">
+                    <p class="form-control-static">{{detailsUsuario.email}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-3 control-label">Password: </label>
+                <div class="col-sm-9">
+                    <p class="form-control-static">{{detailsUsuario.password}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="rol" class="col-sm-3 control-label">Rol: </label>
+                <div class="col-sm-9">
+                    <p class="form-control-static">{{detailsUsuario.rol}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ultima_conexion" class="col-sm-3 control-label">Última conexión: </label>
+                <div class="col-sm-9">
+                    <p class="form-control-static">{{detailsUsuario.ultima_conexion}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="activo" class="col-sm-3 control-label">Activo: </label>
+                <div class="col-sm-9">
+                    <p class="form-control-static">
+                        <span ng-show="detailsUsuario.activo" class="glyphicon glyphicon-ok-circle text-success" aria-hidden="true"></span>
+                        <span ng-show="!detailsUsuario.activo" class="glyphicon glyphicon-ban-circle text-danger" aria-hidden="true"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-6 text-center">
+                    <a class="btn btn-success" ng-href="#/home/" >Volver al inicio</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

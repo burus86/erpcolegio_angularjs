@@ -1,0 +1,52 @@
+<div class="container">
+	<h1>Proyecto de AngularJS</h1>
+	<h4>Profesores que trabajan en el colegio</h4>
+	<hr/>
+
+	<div ng-controller="ProfesoresListCtrl">
+	  
+	  <!-- Carga ventanas modales de añadir, editar y eliminar profesor -->
+	  <div ng-include="'profesores/views/modal/profesores_edit.html'"></div>
+	  <div ng-include="'profesores/views/modal/profesores_delete.html'"></div>
+
+	  <div class="table-responsive">
+		  <table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Nombre</th>
+					<th>DNI</th>
+					<th>Edad</th>
+					<th>Email</th>
+					<th>Teléfono</th>
+					<th></th>
+				</tr>
+			</thead>  
+			<tbody>
+				<tr ng-repeat="item in profesores | orderBy:'nombre' | filter:search:strict">
+					<td>{{$index+1}}</td>
+					<td>
+							{{item.nombre + ' ' + item.apellidos}}
+					</td>
+					<td>{{item.dni}}</td>
+					<td>{{item.edad}}</td>
+					<td>{{item.email}}</td>
+					<td>{{item.telefono}}</td>
+					<td>
+	                    <button class="btn btn-sm btn-warning btn-edit" ng-click="showEdit(item.id)" data-toggle="modal" data-target="#modalProfesoresForm" title="Editar profesor">
+	                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+	                    </button>
+						<button class="btn btn-sm btn-danger btn-delete" ng-click="showDelete(item.id)" data-toggle="modal" data-target="#modalProfesoresDelete" title="Borrar profesor">
+							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		  </table>
+	  </div>
+	  <button id="btn-add" class="btn btn-primary btn-sm" ng-click="showAdd()" data-toggle="modal" data-target="#modalProfesoresForm">
+		  Nuevo <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	  </button>
+
+	</div>
+</div>
