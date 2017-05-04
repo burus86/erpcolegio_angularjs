@@ -4,7 +4,7 @@
 	<hr/>
 
 	<div ng-controller="ProfesoresListCtrl">
-	  
+
 	  <!-- Carga ventanas modales de añadir, editar y eliminar profesor -->
 	  <div ng-include="'profesores/views/modal/profesores_edit.html'"></div>
 	  <div ng-include="'profesores/views/modal/profesores_delete.html'"></div>
@@ -21,7 +21,7 @@
 					<th>Teléfono</th>
 					<th></th>
 				</tr>
-			</thead>  
+			</thead>
 			<tbody>
 				<tr ng-repeat="item in profesores | orderBy:'nombre' | filter:search:strict">
 					<td>{{$index+1}}</td>
@@ -41,6 +41,31 @@
 						</button>
 					</td>
 				</tr>
+				<tfoot>
+	            <tr>
+	                <td></td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.nombre" placeholder="Buscar nombre" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.dni" placeholder="Buscar DNI" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.edad" placeholder="Buscar edad" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.email" placeholder="Buscar email" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.telefono" placeholder="Buscar teléfono" />
+	                </td>
+	                <td>
+
+	                </td>
+
+	                <td></td>
+	            </tr>
+			</tfoot>
 			</tbody>
 		  </table>
 	  </div>
