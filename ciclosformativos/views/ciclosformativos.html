@@ -45,24 +45,20 @@
 					</td>
 				</tr>
 			</tbody>
-			<tfoot>
-			<tr><th>Nombre</th><th>Nivel</th><th>Duración</th><th>Familia Profesional</th></tr>
-			<tr ng-repeat="item in ciclosformativos">
-
-			<td>
-			{{item.nombre | filter:search:strict}}
-			</td>
-			<td>
-			{{item.nivel | filter:search:strict}}
-			</td>
-			<td>
-			{{item.duracion | orderBy:'duracion'}}
-			</td>
-
-			<td>
-			{{item.familia_profesional}}
-			</td>
-			</tr>
+<tfoot>
+			<td></td>
+			 <td>
+	                    <input class="form-control" type="search" ng-model="search.nombre" placeholder="Buscar nombre" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.nivel" placeholder="Buscar Nivel" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.duracion" placeholder="Buscar duracion" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.familia_profesional" placeholder="Buscar familia profesional" />
+	                </td>
 			</tfoot>
 		  </table>
 	  </div>
