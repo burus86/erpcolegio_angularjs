@@ -27,7 +27,7 @@ angular.module('myApp.asignaturas')
 
     $scope.showDelete = function(id) {
         // TODO: Guardar en $scope.deleteAsignatura los datos de la asignatura con ese id
-
+        $scope.deleteAsignatura = $scope.getAsignatura(id);
     };
 
 })
