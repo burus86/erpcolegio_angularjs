@@ -4,7 +4,7 @@
 	<hr/>
 
 	<div ng-controller="ProfesoresListCtrl">
-	  
+
 	  <!-- Carga ventanas modales de añadir, editar y eliminar profesor -->
 	  <div ng-include="'profesores/views/modal/profesores_edit.html'"></div>
 	  <div ng-include="'profesores/views/modal/profesores_delete.html'"></div>
@@ -21,12 +21,14 @@
 					<th>Teléfono</th>
 					<th></th>
 				</tr>
-			</thead>  
+			</thead>
 			<tbody>
 				<tr ng-repeat="item in profesores | orderBy:'nombre' | filter:search:strict">
 					<td>{{$index+1}}</td>
 					<td>
+	                    <a class="btn btn-link" ng-href="#/profesores/{{item.id}}" >
 							{{item.nombre + ' ' + item.apellidos}}
+	                    </a>
 					</td>
 					<td>{{item.dni}}</td>
 					<td>{{item.edad}}</td>
