@@ -16,8 +16,8 @@
 				</tr>
 			</thead>  
 			<tbody>
-				<tr ng-repeat="item in notasAlumnos | orderBy:'nombre' | filter:search:strict">
-					<td>{{$index+1}}</td><!-- {{item.id}} -->
+				<tr ng-repeat="item in notasAlumnos | orderBy:'nombre_asignatura' | filter:search:strict">
+					<td>{{$index+1}}</td>
 					<td>
 	                    <a class="btn-link" ng-href="#/asignaturas/{{item.asignatura.id}}" >
 							{{item.nombre_asignatura}}
@@ -30,9 +30,6 @@
 			</tbody>
 		  </table>
 	  </div>
-	  <!-- <button ng-controller="AsignaturasAddCtrl" id="btn-add" class="btn btn-primary btn-sm" ng-click="addForCiclo()">
-		  Nuevo <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-	  </button> -->
 
 	</div>
 </div>
