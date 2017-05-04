@@ -1,0 +1,61 @@
+<div class="container">
+	<h1>Proyecto de AngularJS</h1>
+	<h4>Asignaturas impartidas en el colegio</h4>
+	<hr/>
+
+	<div ng-controller="AsignaturasListCtrl">
+
+	  <!-- Carga ventanas modales de añadir, editar y eliminar asignatura -->
+	  <div ng-include="'asignaturas/views/modal/asignaturas_edit.html'"></div>
+	  <div ng-include="'asignaturas/views/modal/asignaturas_delete.html'"></div>
+
+		<div class="table-responsive">
+		  <table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Asignatura</th>
+					<th>Profesor</th>
+					<th>Ciclo formativo</th>
+					<th>Curso</th>
+					<th>Sesiones</th>
+					<th>Créditos</th>
+					<th></th>
+				</tr>
+			</thead>  
+			<tbody>
+				<tr ng-repeat="item in asignaturas | orderBy:'codigo' | filter:search:strict">
+					<td>{{$index+1}}</td>
+					<td>
+							{{item.codigo + ': ' + item.nombre}}
+					</td>
+					<td>
+							{{item.nombre_profesor}}
+					</td>
+					<td>
+							{{item.nombre_cicloformativo}}
+					</td>
+					<td>{{item.curso}}</td>
+					<td>{{item.horas_semana}}</td>
+					<td>{{item.creditos}}</td>
+					<td>
+						<a class="btn btn-sm btn-info btn-show" ng-href="#/asignaturas/{{item.id}}/notas">
+	                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+	                    </a>
+	                    <button class="btn btn-sm btn-warning btn-edit" ng-click="showEdit(item.id)" data-toggle="modal" data-target="#modalAsignaturasForm" title="Editar asignatura">
+	                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+	                    </button>
+						<button class="btn btn-sm btn-danger btn-delete" ng-click="showDelete(item.id)" data-toggle="modal" data-target="#modalAsignaturasDelete" title="Borrar asignatura">
+							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		  </table>
+	  </div>
+	  <button id="btn-add" class="btn btn-primary btn-sm" ng-click="showAdd()" data-toggle="modal" data-target="#modalAsignaturasForm">
+		  Nueva <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	  </button>
+
+	</div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container">
+	<h1>Proyecto de AngularJS</h1>
+	<h4>Asignaturas del ciclo formativo de {{detailsCiclo.nombre + ' (' + detailsCiclo.referencia + ')'}}</h4>
+	<hr/>
+
+	<div ng-controller="CiclosFormativosAsignaturasCtrl">
+	  <div class="table-responsive">
+		  <table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Asignatura</th>
+					<th>Profesor</th>
+					<!-- <th>Ciclo formativo</th> --><!-- TODO: No tiene sentido mostrarlo. Siempre es el mismo -->
+					<th>Curso</th>
+					<th>Sesiones</th>
+					<th>Créditos</th>
+				</tr>
+			</thead>  
+			<tbody>
+				<tr ng-repeat="item in asignaturasCiclo | orderBy:'codigo' | filter:search:strict">
+					<td>{{$index+1}}</td>
+					<td>
+							{{item.codigo + ': ' + item.nombre}}
+					</td>
+					<td>
+							{{item.nombre_profesor}}
+					</td>
+					<!-- <td>
+	                    <a class="btn-link" ng-href="#/ciclosformativos/{{item.cicloformativo.id}}" >
+							{{item.nombre_cicloformativo}}
+	                    </a>
+                    </td> -->
+                    <td>{{item.curso}}</td>
+                    <td>{{item.horas_semana}}</td>
+                    <td>{{item.creditos}}</td>
+				</tr>
+			</tbody>
+		  </table>
+	  </div>
+	  <!-- <button ng-controller="AsignaturasAddCtrl" id="btn-add" class="btn btn-primary btn-sm" ng-click="addForCiclo()">
+		  Nuevo <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	  </button> --><!-- FIXME: Decidir si implementar el botón de nuevo -->
+
+	</div>
+</div>
