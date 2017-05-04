@@ -27,6 +27,7 @@ angular.module('myApp.ciclosformativos')
 
     $scope.showDelete = function(id) {
         // TODO: Guardar en $scope.deleteCicloFormativo los datos del ciclo con ese id
+        $scope.deleteCicloFormativo = $scope.getCicloFormativo(id);
 
     };
 
