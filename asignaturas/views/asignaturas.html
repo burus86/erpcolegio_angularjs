@@ -58,6 +58,31 @@
 					</td>
 				</tr>
 			</tbody>
+
+			<tfoot>
+	            <tr>
+	                <td></td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.nombre" placeholder="Buscar asignatura" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.nombre_profesor" placeholder="Buscar profesor" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.nombre_cicloformativo" placeholder="Buscar ciclo formativo" />
+	                </td>
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.curso" placeholder="Buscar curso" />
+	                </td>
+	                <td>
+	                    <!-- <input class="form-control" type="search" ng-model="search.fecha_nacimiento" placeholder="Buscar fecha de nacimiento" /> -->
+	                </td>
+	                <!-- <td>
+	                    <input class="form-control" type="search" ng-model="search.direccion" placeholder="Buscar dirección" />
+	                </td> -->
+	                <td></td>
+	            </tr>
+			</tfoot>
 		  </table>
 	  </div>
 	  <button id="btn-add" class="btn btn-primary btn-sm" ng-click="showAdd()" data-toggle="modal" data-target="#modalAsignaturasForm">
