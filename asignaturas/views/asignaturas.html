@@ -22,7 +22,7 @@
 					<th>Créditos</th>
 					<th></th>
 				</tr>
-			</thead>  
+			</thead>
 			<tbody>
 				<tr ng-repeat="item in asignaturas | orderBy:'codigo' | filter:search:strict">
 					<td>{{$index+1}}</td>
@@ -51,6 +51,19 @@
 					</td>
 				</tr>
 			</tbody>
+			<tfoot>
+	            <tr>
+	                <td></td>
+	                <td>
+	                	<input class="form-control" type="search" ng-model="search.codigo" placeholder="Buscar Codigo" />
+	                	<input class="form-control" type="search" ng-model="search.nombre" placeholder="Buscar Nombre" />
+
+	                <td>
+	                    <input class="form-control" type="search" ng-model="search.nombre_profesor" placeholder="Buscar Profesor" />
+	                </td>
+	                <td></td>
+	            </tr>
+			</tfoot>
 		  </table>
 	  </div>
 	  <button id="btn-add" class="btn btn-primary btn-sm" ng-click="showAdd()" data-toggle="modal" data-target="#modalAsignaturasForm">
