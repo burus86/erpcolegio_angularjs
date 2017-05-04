@@ -25,7 +25,9 @@
 				<tr ng-repeat="item in ciclosformativos | orderBy:'nombre' | filter:search:strict">
 					<td>{{$index+1}}</td>
 					<td>
+					<a class="btn btn-link" ng-href="#/ciclosformativos/{{item.id}}" >
 							{{item.nombre + ' (' + item.referencia + ')'}}
+							</a>
 					</td>
 					<td>{{item.nivel}}</td>
 					<td>{{item.duracion}}</td>
@@ -58,12 +60,6 @@
 	                <td>
 	                    <input class="form-control" type="search" ng-model="search.familia_profesional" placeholder="Buscar familia profesional" />
 	                </td>
-	                <td>
-	                    <!-- <input class="form-control" type="search" ng-model="search.fecha_nacimiento" placeholder="Buscar fecha de nacimiento" /> -->
-	                </td>
-	                <!-- <td>
-	                    <input class="form-control" type="search" ng-model="search.direccion" placeholder="Buscar dirección" />
-	                </td> -->
 	                <td></td>
 	            </tr>
 			</tfoot>
