@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row" ng-controller="UsuariosLoginCtrl">
+        <div class="col-sm-6 col-md-4 col-md-offset-4" ng-show="!success">
+            <h1 class="text-center">Iniciar sesión</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
+                <form class="form-signin" action="#login_success">
+                    <input type="text" class="form-control" placeholder="Email" name="email" ng-model="email" required autofocus>
+                    <input type="password" class="form-control" placeholder="Password" name="password" ng-model="password" required>
+                    <button class="btn btn-lg btn-primary btn-block" type="button" ng-click="submit()">Iniciar sesión</button>
+                    <p ng-show="error" style="color: red;">Los datos de acceso son incorrectos. Por favor, vuelva a intentarlo</p>
+                </form>
+            </div>
+
+            <a ng-href="#/register" class="btn btn-link btn-lg btn-block text-center new-account login-button">Registrarse </a>
+        </div>
+
+        <div class="container" ng-show="currUsuario">
+            <h3>El usuario {{currUsuario.usuario}} ha iniciado sesión correctamente</h3>
+            <form class="form-horizontal" role="form">
+
+                <div class="form-group">
+                    <div class="col-sm-6 text-center">
+                        <i class="fa fa-user-circle fa-10 text-warning" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email: </label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static">{{currUsuario.email}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password: </label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static">{{currUsuario.password}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-6 text-center">
+                        <a class="btn btn-success" ng-href="#/" >Ir al menú principal</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

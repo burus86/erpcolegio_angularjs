@@ -1,0 +1,123 @@
+<div class="container">
+    <div class="row main" ng-controller="UsuariosRegisterCtrl">
+        <div ng-show="!newUsuario">    
+            <div class="panel-heading">
+               <div class="panel-title text-center">
+                    <h1 class="title">Registro</h1>
+                </div>
+            </div> 
+            <div class="main-center account-wall">
+                <form class="form-horizontal" method="post" action="#">
+                    
+                    <div class="form-group">
+                        <label for="usuario" class="cols-sm-2 control-label">Usuario</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="usuario" ng-model="form.usuario"  placeholder="Introduzca su usuario"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="cols-sm-2 control-label">Email</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="email" ng-model="form.email"  placeholder="Introduzca su email"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="cols-sm-2 control-label">Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="password" class="form-control" name="password" ng-model="form.password"  placeholder="Introduzca su password"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label for="confirm" class="cols-sm-2 control-label">Confirmar password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirmar password"/>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="form-group">
+                        <label for="confirm" class="cols-sm-2 control-label">Rol</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users fa-lg" aria-hidden="true"></i></span>
+                                <select name="singleSelect" class="form-control" ng-model="form.rol">
+                                    <option value=""></option>
+                                    <option value="Alumno">Alumno</option>
+                                    <option value="Profesor">Profesor</option>
+                                    <option value="Invitado">Invitado</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <button type="button" ng-click="submit()" class="btn btn-primary btn-lg btn-block login-button">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+
+            <a ng-href="#/login" class="btn btn-link btn-lg btn-block text-center new-account login-button">Login </a>
+        </div>
+
+        <div class="container" ng-show="newUsuario">
+            <h3>El usuario {{newUsuario.usuario}} ha sido registrado correctamente con los siguientes datos de acceso:</h3>
+            <form class="form-horizontal" role="form">
+
+                <div class="form-group">
+                    <div class="col-sm-6 text-center">
+                        <i class="fa fa-user-circle fa-10 text-warning" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="usuario" class="col-sm-3 control-label">Usuario: </label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static">{{newUsuario.usuario}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email: </label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static">{{newUsuario.email}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password: </label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static">{{newUsuario.password}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="rol" class="col-sm-3 control-label">Rol: </label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static">{{newUsuario.rol}}</p>
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="ultima_conexion" class="col-sm-3 control-label">Última conexión: </label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static">{{newUsuario.ultima_conexion}}</p>
+                    </div>
+                </div> -->
+                <div class="form-group">
+                    <div class="col-sm-6 text-center">
+                        <a class="btn btn-success" ng-href="#/" >Ir al menú principal</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

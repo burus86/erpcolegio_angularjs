@@ -1,0 +1,69 @@
+<!-- Modal (Pop up when detail button clicked) -->
+<div id="modalAsignaturasForm" ng-controller="AsignaturasEditCtrl" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="form-horizontal">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="myModalLabel" ng-show="new">Nueva asignatura</h3>
+                    <h3 class="modal-title" id="myModalLabel" ng-show="!new">Actualizar asignatura</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="codigo" class="col-sm-3 control-label">Código</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="codigo" placeholder="Introducir código" ng-model="form.codigo" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre" class="col-sm-3 control-label">Nombre</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nombre" placeholder="Introducir nombre" ng-model="form.nombre" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="curso" class="col-sm-3 control-label">Curso</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="curso" placeholder="Introducir curso" ng-model="form.curso" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="horas_semana" class="col-sm-3 control-label">Número de horas a la semana</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="horas_semana" placeholder="Introducir las horas semanales" ng-model="form.horas_semana" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="horas_totales" class="col-sm-3 control-label">Total de horas</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="horas_totales" placeholder="Introducir las horas totales" ng-model="form.horas_totales" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="creditos" class="col-sm-3 control-label">Créditos ECTS</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="creditos" placeholder="Introducir número de créditos" ng-model="form.creditos" />
+                        </div>
+                    </div>
+                    <!-- FIXME: Claves foráneas => AÑadir campo select y guardar en la BD el campo ID -->
+                    <div class="form-group">
+                        <label for="id_profesor" class="col-sm-3 control-label">Profesor</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="id_profesor" placeholder="Introducir ÍD del profesor" ng-model="form.id_profesor" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_ciclo_formativo" class="col-sm-3 control-label">Ciclo formativo</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="id_ciclo_formativo" placeholder="Introducir ÍD del ciclo" ng-model="form.id_ciclo_formativo" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" ng-click="submit()" class="btn btn-success">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
