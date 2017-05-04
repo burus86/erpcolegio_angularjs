@@ -1,0 +1,50 @@
+<!-- Modal (Pop up when detail button clicked) -->
+<div id="modalCiclosFormativosForm" ng-controller="CiclosFormativosEditCtrl" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="form-horizontal">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="myModalLabel" ng-show="new">Nuevo ciclo formativo</h3>
+                    <h3 class="modal-title" id="myModalLabel" ng-show="!new">Actualizar ciclo formativo</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="referencia" class="col-sm-3 control-label">Referencia</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="referencia" placeholder="Introducir referencia" ng-model="form.referencia" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre" class="col-sm-3 control-label">Nombre</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nombre" placeholder="Introducir nombre" ng-model="form.nombre" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nivel" class="col-sm-3 control-label">Nivel</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nivel" placeholder="Introducir nivel" ng-model="form.nivel" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="duracion" class="col-sm-3 control-label">Duración</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="duracion" placeholder="Introducir la duración en horas" ng-model="form.duracion" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="familia_profesional" class="col-sm-3 control-label">Familia profesional</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="familia_profesional" placeholder="Introducir la familia profesional" ng-model="form.familia_profesional" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" ng-click="submit()" class="btn btn-success">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
