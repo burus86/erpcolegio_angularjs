@@ -4,11 +4,11 @@ angular.module('myApp.alumnos')
 
     $scope.delete = function() {
 
-        $http.delete(url + 'alumnos/'+$scope.deleteAlumno.id). //http.get(url + 'alumnos/'+id+'/delete').
+        $http.get(url + 'alumnos/'+$scope.deleteAlumno.id+'/delete'). //http.get(url + 'alumnos/'+id+'/delete').
             then(function(response) {
-                
+
                 angular.forEach($rootScope.alumnos, function(item, key) {
-                    if (item.id == $scope.deleteAlumno.id) 
+                    if (item.id == $scope.deleteAlumno.id)
                         $rootScope.alumnos.splice(key, 1);
                 });
                 console.log('El alumno con id = "'+$scope.deleteAlumno.id+'" y nombre = "'+$scope.deleteAlumno.nombre+' '+$scope.deleteAlumno.apellidos+'" ha sido borrado satisfactoriamente');
