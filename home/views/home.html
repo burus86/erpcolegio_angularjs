@@ -10,15 +10,15 @@
 			</div>
 			<div class="col-sm-3">
 				<i class="fa fa-user-circle fa-10 text-warning" aria-hidden="true"></i>
-				<h3>{{estadisticas.num_profesores}} Profesores</h3>
+				<h3><a href="#profesores/">{{estadisticas.num_profesores}} Profesores</a></h3>
 			</div>
 			<div class="col-sm-3">
 				<i class="fa fa-graduation-cap fa-10 text-warning" aria-hidden="true"></i>
-				<h3>{{estadisticas.num_ciclosformativos}} Ciclos formativos</h3>
+				<h3><a href="#ciclosformativos/">{{estadisticas.num_ciclosformativos}} Ciclos formativos</a></h3>
 			</div>
 			<div class="col-sm-3">
 				<i class="fa fa-book fa-10 text-warning" aria-hidden="true"></i>
-				<h3>{{estadisticas.num_asignaturas}} Asignaturas</h3>
+				<h3><a href="#asignaturas/">{{estadisticas.num_asignaturas}} Asignaturas</a></h3>
 			</div>
 		</div>
 	</div>
@@ -38,7 +38,9 @@
 			<tbody>
 				<tr ng-repeat="item in usuarios | orderBy:'-ultima_conexion' | filter:search:strict">
 					<td>
+	                    <a class="btn btn-link" ng-href="#/usuarios/{{item.id}}" >
 							{{item.usuario}}
+	                    </a>
 					</td>
 					<td>{{item.email}}</td>
 					<td>{{item.rol}}</td>
