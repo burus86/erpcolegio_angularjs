@@ -32,12 +32,12 @@
 	                    </a>
 					</td>
 					<td>
-					<a class="btn btn-link" ng-href="#/profesores/{{item.id}}" >
+					<a class="btn btn-link" ng-href="#/profesores/{{item.profesor.id}}" >
 							{{item.nombre_profesor}}
 	                    </a>
 					</td>
 					<td>
-					<a class="btn btn-link" ng-href="#/ciclosformativos/{{item.id}}" >
+					<a class="btn btn-link" ng-href="#/ciclosformativos/{{item.cicloformativo.id}}" >
 							{{item.nombre_cicloformativo}}
 	                    </a>
 
@@ -73,18 +73,8 @@
 	                <td>
 	                    <input class="form-control" type="search" ng-model="search.curso" placeholder="Buscar curso" />
 	                </td>
-	                <td>
-	                    <!-- <input class="form-control" type="search" ng-model="search.fecha_nacimiento" placeholder="Buscar fecha de nacimiento" /> -->
-	                </td>
-	                <!-- <td>
-	                    <input class="form-control" type="search" ng-model="search.direccion" placeholder="Buscar dirección" />
-	                </td> -->
-	                	<input class="form-control" type="search" ng-model="search.codigo" placeholder="Buscar Codigo" />
-	                	<input class="form-control" type="search" ng-model="search.nombre" placeholder="Buscar Nombre" />
-
-	                <td>
-	                    <input class="form-control" type="search" ng-model="search.nombre_profesor" placeholder="Buscar Profesor" />
-	                </td>
+	                <td></td>
+	                <td></td>
 	                <td></td>
 	            </tr>
 			</tfoot>
