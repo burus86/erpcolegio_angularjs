@@ -6,10 +6,22 @@ angular.module('myApp.usuarios')
 	$scope.error = false;
 
 	$scope.submit = function() {
-	    // TODO-1: Realizar Petición GET a la URL /usuarios/emails/{email}/passwords/{password}
-	        // TODO-2: En caso de éxito y si response.data no está vacio 
-	        // 		guardar en $scope.currUsuario el JSON devuelto
-	        // 		guardar en $rootScope.autenticado el valor 1
+      $http.get(url + 'usuarios/emails/'+$scope.email+'/passwords/'+$scope.password).
+        then(function(response) {
+
+			if (!$.isEmptyObject(response.data)) {
+				$scope.success = true;
+				$scope.error = false;
+				$scope.currUsuario = response.data;
+				$rootScope.autenticado = 1;
+			} else {
+				$scope.error = true;
+				$scope.success = false;
+			}
+          
+        }, function(response) {
+          $scope.notice = response.status + " " + response.data.error;
+        });
 
 	};
 });
